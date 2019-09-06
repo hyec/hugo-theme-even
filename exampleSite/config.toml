@@ -51,6 +51,7 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
 
 [params]
   version = "4.x"           # Used to give a friendly message when you have an incompatible update
+  themeColor = "Cobalt Blue" # Theme color: Default | Mint Green | Cobalt Blue | Hot Pink | Dark Violet
   debug = false             # If true, load `eruda.min.js`. See https://github.com/liriliri/eruda
 
   since = "2017"            # Site creation time          # 站点建立时间

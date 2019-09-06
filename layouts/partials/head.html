@@ -60,8 +60,13 @@
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 {{- end -}}
 
+{{ $options := (dict "enableSourceMap" true ) }}
+{{ $scss := resources.Get "scss/style.scss" | resources.ExecuteAsTemplate "css/style.scss" . }}
+{{ $style := $scss | toCSS $options | fingerprint "md5" }}
+
+
 <!-- Styles -->
-<link href="{{ print "dist/" .Site.Data.even.assets.even.css | relURL }}" rel="stylesheet">
+<link href="{{ $style.RelPermalink }}" rel="stylesheet">
 {{ if .Site.Params.publicCDN.enable -}}
   {{ if .Site.Params.fancybox }}{{ .Site.Params.publicCDN.fancyboxCSS | safeHTML }}{{ end }}
 {{- else -}}

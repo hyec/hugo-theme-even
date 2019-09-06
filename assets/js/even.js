@@ -276,5 +276,3 @@ Even.responsiveTable = function() {
     wrapper.appendChild(table);
   }
 };
-
-export {Even}
